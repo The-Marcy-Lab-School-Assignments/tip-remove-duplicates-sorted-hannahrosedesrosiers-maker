@@ -11,11 +11,26 @@
  * Constraints:
  * - The array is sorted in non-decreasing order.
  * - Modify the array in-place.
+ //modify the given array
  * - Return the number of unique elements.
  */
 
 const removeDuplicates = (nums) => {
-    //write your code here
+    if (nums.length === 0) return 0
+    //does the array even have numbers if not there cant be duplicates [] would return 0
+    let i = 0
+    //slow pointer
+    for (let j = 1; j < nums.length; j++ )
+        //create a loop with a fast pointer(j) starts at index 1, compares each to i
+    {if (nums[j] !== nums[i]){
+        //checks if the current element at j is equal to the current element of i if not equal its a new number(unique)
+        i++
+        //moves it forward
+        nums[i] = nums[j]
+    }
+    }
+    return i + 1
+    
 };
 
 // Example usage (commented out to avoid interference with tests)
